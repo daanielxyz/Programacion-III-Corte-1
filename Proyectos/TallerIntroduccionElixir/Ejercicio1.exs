@@ -17,7 +17,7 @@ defmodule Ejercicio1 do
     kilometers = Util.input("Type the amount of kilometers traveled", :float)
     liters = Util.input("Typed the amount of liters consumed", :float)
     performance = kilometers / liters
-    message = "Hi #{name}, your performance is #{Float.round(performance, 2)} km/l."
+    message = "Hi #{name}, your performance is #{Util.format_currency(performance)} km/l."
     Util.show_message(message)
   end
 end

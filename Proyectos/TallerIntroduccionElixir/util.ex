@@ -34,4 +34,8 @@ defmodule Util do
         input(message, :float)
     end
   end
+
+  def format_currency(amount) do
+    :erlang.float_to_binary(amount, decimals: 2)
+  end
 end

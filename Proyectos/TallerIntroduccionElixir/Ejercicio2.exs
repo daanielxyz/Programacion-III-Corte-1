@@ -22,7 +22,7 @@ defmodule Ejercicio2 do
     books_amount = Util.input("Type the amount of books: ", :integer)
     unitary_price = Util.input("Type the price of the book", :float)
     total = books_amount * unitary_price
-    message = "The book '#{title}'\nHas a total of  #{books_amount} unities\nWith a price of $#{Float.round(unitary_price, 2)} each.\nThe total bill is $#{Float.round(total, 2)}."
+    message = "The book '#{title}'\nHas a total of  #{books_amount} unities\nWith a price of $#{Util.format_currency(unitary_price)} each.\nThe total bill is $#{Util.format_currency(total)}."
     Util.show_message(message)
   end
 end
