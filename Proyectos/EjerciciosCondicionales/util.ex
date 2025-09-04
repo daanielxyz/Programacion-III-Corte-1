@@ -1,11 +1,11 @@
 defmodule Util do
   def show_message(message) do
-    System.cmd("java", ["-cp", ".", "TallerIntroduccionElixir.Mensaje", message])
+    System.cmd("java", ["-cp", ".", "EjerciciosCondicionales.Mensaje", message])
   end
 
   # Clausulas: Mismos argumentos
   def input(message, :string) do
-    System.cmd("java", ["-cp", ".", "TallerIntroduccionElixir.Mensaje", "input", message])
+    System.cmd("java", ["-cp", ".", "EjerciciosCondicionales.Mensaje", "input", message])
     |> elem(0)
     |> String.trim()
   end
@@ -32,6 +32,31 @@ defmodule Util do
       ArgumentError ->
         show_message("Error: Typed value is not a valid decimal")
         input(message, :float)
+    end
+  end
+
+  def input(message, :boolean) do
+    try do
+      message
+      |> input(:string)
+      |> String.downcase()
+      |> case do
+        "true" -> true
+        "false" -> false
+        "1" -> true
+        "0" -> false
+        "y" -> true
+        "n" -> false
+        "yes" -> true
+        "no" -> false
+        "si" -> true
+        "no" -> false
+        _ -> raise ArgumentError
+      end
+    rescue
+      ArgumentError ->
+        show_message("Error: Typed value is not a valid boolean (true/false or 1/0)")
+        input(message, :boolean)
     end
   end
 

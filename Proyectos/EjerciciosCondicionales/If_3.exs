@@ -3,8 +3,8 @@ En un sistema bancario, cuando un cliente realiza un retiro, el programa debe ve
   Si el saldo es mayor o igual al monto solicitado, el retiro se aprueba y se muestra el nuevo saldo.
   Si no, debe mostrarse “Fondos insuficientes”.
 """
-defmodule Ejercicio3 do
-  def ejercicio3 do
+defmodule If_3 do
+  def enough_balance do
     balance = Util.input("Enter your balance:", :float)
     withdrawal = Util.input("Enter the withdrawal amount:", :float)
     if balance >= withdrawal do
@@ -14,4 +14,5 @@ defmodule Ejercicio3 do
     end
   end
 end
-Ejercicio3.ejercicio3()
+
+If_3.enough_balance()
