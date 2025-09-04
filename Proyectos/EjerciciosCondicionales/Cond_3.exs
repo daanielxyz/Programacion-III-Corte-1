@@ -6,6 +6,13 @@ En un videojuego, un jugador gana puntos dependiendo de la dificultad del enemig
 """
 defmodule Cond_3 do
   def videogame_points do
-    Util.show_message("")
+    level = Util.input("Enter the level of the enemy you beat: ", :string)
+    cond do
+      level < 3 -> Util.show_message("You get +10 points!")
+      level >= 3 && level < 6 -> Util.show_message("You get +20 points!")
+      level > 6 -> Util.show_message("You get +50 points!")
+    end
   end
 end
+
+Cond_3.videogame_points()
