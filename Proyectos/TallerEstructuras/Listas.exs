@@ -28,14 +28,14 @@ defmodule Main do
     Util.show_message(list1 -- list2)
   end
 
-  def ej4 do
-
+  def ej4(list) do
+    Enum.map(list, fn x -> x * 3 end)
   end
-
-
 
 
   def ej5 do
-
+    [a, b, c] = [100, 200, 300]
+    Util.show_message("a: #{a}, b: #{b}, c: #{c}")
   end
+
 end
